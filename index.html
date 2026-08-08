@@ -559,44 +559,73 @@
 </div>
                 </div>
             </div>
-            <div class="contact-form">
+           class="contact-form">
                 <form action="https://formsubmit.co/oluwasegun.editorial@gmail.com" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_subject" value="New Portfolio Inquiry">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
 
-                    <div class="input-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
+                   <div class="input-group">
+    <input type="text" name="name" placeholder="Your Name" required>
+</div>
 
-                    <div class="input-group">
-                        <select name="service" id="serviceSelect" required>
-                            <option value="" selected disabled>Select Service</option>
-                            <option value="Book Editing">Book Editing</option>
-                            <option value="Book Formatting">Book Formatting</option>
-                            <option value="Beta Reading">Beta Reading ($0.005 / word)</option>
-                            <option value="Author Website">Author Website ($600)</option>
-                            <option value="Publishing Consultation">Publishing Consultation</option>
-                        </select>
-                    </div>
+<div class="input-group">
+    <input type="email" name="email" placeholder="Your Email" required>
+</div>
 
-                    <div class="drag-drop-area" id="dropArea">
-                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
-                        <p class="drop-text">Drag & drop your manuscript or brief (Optional)</p>
-                        <span>or</span>
-                        <label for="fileInput" class="file-browse-btn">Browse File</label>
-                        <input type="file" name="attachment" id="fileInput" accept=".doc,.docx,.pdf,.txt" hidden>
-                        <div id="fileDetails" class="file-details"></div>
-                    </div>
+<!-- Primary Service Dropdown -->
+<div class="input-group">
+    <select name="service" id="serviceSelect" onchange="document.getElementById('editingTypeGroup').style.display = (this.value === 'Book Editing') ? 'block' : 'none';" required>
+        <option value="" selected disabled>Select Service</option>
+        <option value="Book Editing">Book Editing</option>
+        <option value="Book Formatting">Book Formatting</option>
+        <option value="Beta Reading">Beta Reading ($0.005 / word)</option>
+        <option value="Author Website">Author Website ($600)</option>
+        <option value="Publishing Consultation">Publishing Consultation</option>
+    </select>
+</div>
 
-                    <div class="input-group">
-                        <textarea name="message" rows="6" placeholder="Tell me about your project (word count, genre, timeline)..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+<!-- Dynamic Editing Level Sub-Dropdown (Reveals only when Book Editing is selected) -->
+<div class="input-group" id="editingTypeGroup" style="display: none;">
+    <select name="editing_type" id="editingTypeSelect">
+        <option value="" selected disabled>Select Editing Level / Type</option>
+        <option value="Proofreading ($0.015/word)">Proofreading ($0.015 / word)</option>
+        <option value="Copyediting ($0.025/word)">Copyediting ($0.025 / word)</option>
+        <option value="Line Editing ($0.04/word)">Line Editing ($0.04 / word)</option>
+        <option value="Developmental Editing ($0.06/word)">Developmental Editing ($0.06 / word)</option>
+        <option value="Unsure / Need Sample Assessment">Unsure / Need Sample Assessment</option>
+    </select>
+</div>
+
+<!-- Project Budget Dropdown -->
+<div class="input-group">
+    <select name="budget" id="budgetSelect" required>
+        <option value="" selected disabled>Estimated Budget (USD)</option>
+        <option value="Under $250">Under $250</option>
+        <option value="$250 - $500">$250 – $500</option>
+        <option value="$500 - $1,000">$500 – $1,000</option>
+        <option value="$1,000 - $2,500">$1,000 – $2,500</option>
+        <option value="$2,500+">$2,500+</option>
+        <option value="Flexible / Need Quote">Flexible / Need Custom Quote</option>
+    </select>
+</div>
+
+<div class="drag-drop-area" id="dropArea">
+    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+    <p class="drop-text">Drag & drop your manuscript or brief (Optional)</p>
+    <span>or</span>
+    <label for="fileInput" class="file-browse-btn">Browse File</label>
+    <input type="file" name="attachment" id="fileInput" accept=".doc,.docx,.pdf,.txt" hidden>
+    <div id="fileDetails" class="file-details"></div>
+</div>
+
+<div class="input-group">
+    <textarea name="message" rows="6" placeholder="Tell me about your project (word count, genre, timeline)..." required></textarea>
+</div>
+
+<button type="submit" class="btn">Send Message</button>
+            </div>
+        
             </div>
         </div>
     </div>
